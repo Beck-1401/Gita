@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #fdf8f2;
+  --foreground: #1a1209;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.125rem;
+  line-height: 1.75;
+}
+
+.font-devanagari {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.font-sans {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+/* Subtle ornamental divider */
+.divider-om::before {
+  content: '✦';
+  color: #f5a623;
+  font-size: 1rem;
+}
+
+/* Sanskrit text styling */
+.devanagari-text {
+  font-family: 'Noto Sans Devanagari', sans-serif;
+  font-size: 1.5rem;
+  line-height: 2;
+  color: #3d2b0f;
+}
+
+/* Prose-like commentary text */
+.commentary-text {
+  font-family: 'Crimson Text', Georgia, serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #1a1209;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #ece3d0;
+}
+::-webkit-scrollbar-thumb {
+  background: #8b6f47;
+  border-radius: 3px;
+}

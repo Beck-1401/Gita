@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "Gita Website (dev)",
+      "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
+      "runtimeArgs": ["C:\\Users\\BradB\\gita-website\\node_modules\\next\\dist\\bin\\next", "dev", "--port", "3000"],
+      "port": 3000
+    }
+  ]
+}

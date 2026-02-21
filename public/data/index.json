@@ -1,0 +1,94 @@
+{
+  "chapters": [
+    {
+      "num": 1,
+      "title": "Arjuna Vishada Yoga",
+      "verseCount": 47
+    },
+    {
+      "num": 2,
+      "title": "Sankhya Yoga",
+      "verseCount": 72
+    },
+    {
+      "num": 3,
+      "title": "Karma Yoga",
+      "verseCount": 43
+    },
+    {
+      "num": 4,
+      "title": "Jnana Karma Sanyasa Yoga",
+      "verseCount": 42
+    },
+    {
+      "num": 5,
+      "title": "Karma Sanyasa Yoga",
+      "verseCount": 29
+    },
+    {
+      "num": 6,
+      "title": "Dhyana Yoga",
+      "verseCount": 47
+    },
+    {
+      "num": 7,
+      "title": "Jnana Vijnana Yoga",
+      "verseCount": 30
+    },
+    {
+      "num": 8,
+      "title": "Aksara Brahma Yoga",
+      "verseCount": 28
+    },
+    {
+      "num": 9,
+      "title": "Raja Vidya Raja Guhya Yoga",
+      "verseCount": 34
+    },
+    {
+      "num": 10,
+      "title": "Vibhuti Yoga",
+      "verseCount": 42
+    },
+    {
+      "num": 11,
+      "title": "Visvarupa Darsana Yoga",
+      "verseCount": 55
+    },
+    {
+      "num": 12,
+      "title": "Bhakti Yoga",
+      "verseCount": 20
+    },
+    {
+      "num": 13,
+      "title": "Ksetra Ksetrajna Vibhaga Yoga",
+      "verseCount": 35
+    },
+    {
+      "num": 14,
+      "title": "Gunatraya Vibhaga Yoga",
+      "verseCount": 27
+    },
+    {
+      "num": 15,
+      "title": "Purusottama Yoga",
+      "verseCount": 20
+    },
+    {
+      "num": 16,
+      "title": "Daivasura Sampad Vibhaga Yoga",
+      "verseCount": 24
+    },
+    {
+      "num": 17,
+      "title": "Sraddhatraya Vibhaga Yoga",
+      "verseCount": 28
+    },
+    {
+      "num": 18,
+      "title": "Moksha Sanyasa Yoga",
+      "verseCount": 78
+    }
+  ]
+}
