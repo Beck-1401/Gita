@@ -1,4 +1,5 @@
 import type { ChatMessage as ChatMessageType } from '@/lib/types';
+import ReactMarkdown from 'react-markdown';
 
 interface ChatMessageProps {
   message: ChatMessageType;
@@ -21,9 +22,32 @@ export function ChatMessage({ message }: ChatMessageProps) {
             : 'bg-white border border-earth-200 text-ink rounded-bl-sm'
         }`}
       >
-        <p className={`font-serif text-sm leading-relaxed whitespace-pre-wrap ${isUser ? 'text-white' : 'text-ink'}`}>
-          {message.content}
-        </p>
+        {isUser ? (
+          <p className="font-serif text-sm leading-relaxed text-white whitespace-pre-wrap">
+            {message.content}
+          </p>
+        ) : (
+          <div className="font-serif text-sm leading-relaxed text-ink prose-sm prose-headings:font-sans prose-headings:font-semibold prose-headings:text-earth-800 prose-strong:font-semibold prose-strong:text-earth-900 prose-ol:pl-4 prose-ul:pl-4">
+            <ReactMarkdown
+              components={{
+                h1: ({ children }) => <h3 className="font-sans font-semibold text-earth-800 text-sm mt-3 mb-1">{children}</h3>,
+                h2: ({ children }) => <h3 className="font-sans font-semibold text-earth-800 text-sm mt-3 mb-1">{children}</h3>,
+                h3: ({ children }) => <h3 className="font-sans font-semibold text-earth-800 text-sm mt-3 mb-1">{children}</h3>,
+                p: ({ children }) => <p className="mb-2 last:mb-0">{children}</p>,
+                strong: ({ children }) => <strong className="font-semibold text-earth-900">{children}</strong>,
+                em: ({ children }) => <em className="italic">{children}</em>,
+                ul: ({ children }) => <ul className="list-disc pl-4 mb-2 space-y-0.5">{children}</ul>,
+                ol: ({ children }) => <ol className="list-decimal pl-4 mb-2 space-y-0.5">{children}</ol>,
+                li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+                blockquote: ({ children }) => (
+                  <blockquote className="border-l-2 border-saffron-300 pl-3 italic text-earth-600 my-2">{children}</blockquote>
+                ),
+              }}
+            >
+              {message.content}
+            </ReactMarkdown>
+          </div>
+        )}
       </div>
     </div>
   );
