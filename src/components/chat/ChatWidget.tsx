@@ -46,7 +46,7 @@ export function ChatWidget({ verseRef, commentaryContext }: ChatWidgetProps) {
     setMessages((prev) => [...prev, { role: 'assistant', content: '' }]);
 
     try {
-      const res = await fetch('/api/chat', {
+      const res = await fetch('/gita/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
