@@ -6,7 +6,7 @@ export const TRANSLATOR_LABELS: Record<TranslatorKey, string> = {
   zaehner: 'Zaehner',
   sivananda: 'Sivananda',
   bhaktivedanta: 'Bhaktivedanta',
-  gemini: 'Brad',
+  gemini: 'Gemini AI',
   radhakrishnan: 'Radhakrishnan',
   stoller_miller: 'Stoller Miller',
 };

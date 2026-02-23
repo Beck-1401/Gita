@@ -26,7 +26,7 @@ export default function AboutPage() {
             ['Sivananda', 'Practical Vedanta, accessible commentary'],
             ['Bhaktivedanta', 'Vaishnava Bhakti tradition (ISKCON)'],
             ['Radhakrishnan', 'Neo-Vedanta, philosophical synthesis'],
-            ['Gemini (AI)', 'AI-generated translation for comparison'],
+            ['Gemini AI', 'AI-generated translation for comparison'],
           ].map(([name, desc]) => (
             <li key={name} className="flex gap-3">
               <span className="text-saffron-500 mt-1">✦</span>
