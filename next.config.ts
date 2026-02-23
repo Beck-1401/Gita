@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
         source: "/",
         destination: "/gita",
         permanent: false,
+        basePath: false, // prevent Next.js from prepending /gita to destination
       },
     ];
   },
