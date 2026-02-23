@@ -17,7 +17,7 @@ export const TRANSLATOR_TRADITION: Record<TranslatorKey, string> = {
   zaehner: 'Jesuit',
   sivananda: 'Vedanta',
   bhaktivedanta: 'Vaishnava',
-  gemini: 'Original Translation',
+  gemini: 'Gemini AI',
   radhakrishnan: 'Neo-Vedanta',
   stoller_miller: 'Literary',
 };

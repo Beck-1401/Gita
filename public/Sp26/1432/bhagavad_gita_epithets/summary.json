@@ -1,0 +1,302 @@
+{
+  "Krishna": {
+    "stats": {
+      "total": 26,
+      "success": 26,
+      "failed": 0
+    },
+    "items": [
+      {
+        "name": "Hrishikesha",
+        "query": "Hrishikesha Krishna Bristling-haired Hindu deity painting",
+        "file": "bhagavad_gita_epithets\\Krishna\\Hrishikesha.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Achyuta",
+        "query": "Achyuta Krishna Imperishable Hindu deity art",
+        "file": "bhagavad_gita_epithets\\Krishna\\Achyuta.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Madhava",
+        "query": "Madhava Krishna Descendant of Madhu Hindu art",
+        "file": "bhagavad_gita_epithets\\Krishna\\Madhava.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Keshava",
+        "query": "Keshava Krishna Handsome-haired Hindu deity",
+        "file": "bhagavad_gita_epithets\\Krishna\\Keshava.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Govinda",
+        "query": "Govinda Krishna Chief of Herdsmen Hindu art",
+        "file": "bhagavad_gita_epithets\\Krishna\\Govinda.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Madhusudana",
+        "query": "Madhusudana Krishna Destroyer of Demon Madhu Hindu",
+        "file": "bhagavad_gita_epithets\\Krishna\\Madhusudana.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Janardana",
+        "query": "Janardana Krishna Agitator of Men Hindu deity",
+        "file": "bhagavad_gita_epithets\\Krishna\\Janardana.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Varshneya",
+        "query": "Varshneya Krishna Clansman of Vrishnis Hindu",
+        "file": "bhagavad_gita_epithets\\Krishna\\Varshneya.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Keshinisudana",
+        "query": "Keshinisudana Krishna Slayer of Demon Keshin",
+        "file": "bhagavad_gita_epithets\\Krishna\\Keshinisudana.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Arisudana",
+        "query": "Arisudana Krishna Destroyer of Enemy Hindu",
+        "file": "bhagavad_gita_epithets\\Krishna\\Arisudana.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Bhagavan",
+        "query": "Bhagavan Krishna Blessed One Hindu deity",
+        "file": "bhagavad_gita_epithets\\Krishna\\Bhagavan.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Vasudeva",
+        "query": "Vasudeva Krishna Son of Vasudeva Hindu art",
+        "file": "bhagavad_gita_epithets\\Krishna\\Vasudeva.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Prabho",
+        "query": "Prabho Krishna Splendid One Hindu deity",
+        "file": "bhagavad_gita_epithets\\Krishna\\Prabho.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Mahabaho_Krishna",
+        "query": "Mahabaho Krishna Mighty Armed Hindu deity",
+        "file": "bhagavad_gita_epithets\\Krishna\\Mahabaho_Krishna.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Yadava",
+        "query": "Yadava Krishna Descendant of Yadu Hindu",
+        "file": "bhagavad_gita_epithets\\Krishna\\Yadava.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Sahasrabaho",
+        "query": "Sahasrabaho Krishna Thousand-armed Hindu Vishvarupa",
+        "file": "bhagavad_gita_epithets\\Krishna\\Sahasrabaho.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Purushottama",
+        "query": "Purushottama Krishna Supreme Spirit Hindu",
+        "file": "bhagavad_gita_epithets\\Krishna\\Purushottama.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Mahatman",
+        "query": "Mahatman Vishnu whose self is great Hindu",
+        "file": "bhagavad_gita_epithets\\Krishna\\Mahatman.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Vishnu",
+        "query": "Vishnu avatar Krishna Hindu deity",
+        "file": "bhagavad_gita_epithets\\Krishna\\Vishnu.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Devesh",
+        "query": "Devesh Deva Isha Lord of Gods Krishna Hindu",
+        "file": "bhagavad_gita_epithets\\Krishna\\Devesh.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Anantarupa",
+        "query": "Anantarupa infinite form Vishvarupa Krishna",
+        "file": "bhagavad_gita_epithets\\Krishna\\Anantarupa.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Prajapati",
+        "query": "Prajapati Lord of Creatures Hindu deity",
+        "file": "bhagavad_gita_epithets\\Krishna\\Prajapati.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Aprameya",
+        "query": "Aprameya Immeasurable One Krishna Hindu",
+        "file": "bhagavad_gita_epithets\\Krishna\\Aprameya.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Apratimaprabhava",
+        "query": "Apratimaprabhava Incomparable Glory Krishna Hindu",
+        "file": "bhagavad_gita_epithets\\Krishna\\Apratimaprabhava.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Isham_Idyam",
+        "query": "Ishyam Idyam Lord to be Praised Krishna Hindu",
+        "file": "bhagavad_gita_epithets\\Krishna\\Isham_Idyam.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Deva",
+        "query": "Deva God Krishna Bhagavad Gita Hindu art",
+        "file": "bhagavad_gita_epithets\\Krishna\\Deva.jpg",
+        "status": "success"
+      }
+    ]
+  },
+  "Arjuna": {
+    "stats": {
+      "total": 21,
+      "success": 21,
+      "failed": 0
+    },
+    "items": [
+      {
+        "name": "Dhananjaya",
+        "query": "Dhananjaya Arjuna Conqueror of Wealth Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Dhananjaya.png",
+        "status": "success"
+      },
+      {
+        "name": "Pandava",
+        "query": "Pandava Arjuna Son of Pandu Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Pandava.webp",
+        "status": "success"
+      },
+      {
+        "name": "Kapidhvaja",
+        "query": "Kapidhvaja Arjuna Monkey-bannered chariot Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Kapidhvaja.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Partha",
+        "query": "Partha Arjuna Son of Pritha Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Partha.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Kaunteya",
+        "query": "Kaunteya Arjuna Son of Kunti Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Kaunteya.webp",
+        "status": "success"
+      },
+      {
+        "name": "Gudakesha",
+        "query": "Gudakesha Arjuna Thick-haired Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Gudakesha.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Paramtapa",
+        "query": "Paramtapa Arjuna Scorcher of the Foe Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Paramtapa.png",
+        "status": "success"
+      },
+      {
+        "name": "Purusarshabha",
+        "query": "Purusarshabha Arjuna Bull among Men Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Purusarshabha.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Mahabaho_Arjuna",
+        "query": "Mahabaho Arjuna Mighty Armed warrior Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Mahabaho_Arjuna.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Kurunandana",
+        "query": "Kurunandana Arjuna Joy of Kuru Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Kurunandana.webp",
+        "status": "success"
+      },
+      {
+        "name": "Anagha",
+        "query": "Anagha Arjuna Blameless One Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Anagha.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Bharata",
+        "query": "Bharata Arjuna Descendant of Bharata Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Bharata.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Bharatarshabha",
+        "query": "Bharatarshabha Arjuna Bull of Bharatas Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Bharatarshabha.png",
+        "status": "success"
+      },
+      {
+        "name": "Dehabhritam_Vara",
+        "query": "Dehabhritam Vara Best of the Embodied Arjuna Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Dehabhritam_Vara.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Kurusreshtha",
+        "query": "Kurusreshtha Best of Kurus Arjuna Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Kurusreshtha.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Savyasacin",
+        "query": "Savyasacin Arjuna Ambidextrous Archer Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Savyasacin.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Kiritin",
+        "query": "Kiritin Arjuna Diademed One crowned Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Kiritin.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Kurupravira",
+        "query": "Kurupravira Chief Kuru Hero Arjuna Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Kurupravira.png",
+        "status": "success"
+      },
+      {
+        "name": "Bharatashreshtha",
+        "query": "Bharatashreshtha Best of the Bharatas Arjuna",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Bharatashreshtha.jpg",
+        "status": "success"
+      },
+      {
+        "name": "Bharatasattama",
+        "query": "Bharatasattama Highest of the Bharatas Arjuna",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Bharatasattama.webp",
+        "status": "success"
+      },
+      {
+        "name": "Purushavyaghra",
+        "query": "Purushavyaghra Tiger among Men Arjuna Mahabharata",
+        "file": "bhagavad_gita_epithets\\Arjuna\\Purushavyaghra.jpg",
+        "status": "success"
+      }
+    ]
+  }
+}
