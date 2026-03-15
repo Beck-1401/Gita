@@ -59,7 +59,7 @@ export default function WarriorFigure({ character, onClick, isSelected }) {
 
   return (
     <group
-      position={[character.position.x, 0, character.position.z]}
+      position={[character.position.x, character.position.y || 0, character.position.z]}
       onPointerDown={(e) => { e.stopPropagation(); onClick(character) }}
       onPointerOver={(e) => { e.stopPropagation(); setHovered(true); document.body.style.cursor = 'pointer' }}
       onPointerOut={() => { setHovered(false); document.body.style.cursor = 'auto' }}

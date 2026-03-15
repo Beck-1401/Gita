@@ -78,12 +78,12 @@ export const characters = [
   // ─── CENTER ───────────────────────────────────────────────────────────────
   {
     id: 'krishna',
-    sprite: 'assets/krishna_charioteer_1773505730658.png',
+    sprite: 'assets/krishna_voxel_sprite_transparent.png',
     name: 'Kṛṣṇa',
     nameDevanagari: 'कृष्ण',
     side: 'center',
     role: 'Charioteer / Avatar of Viṣṇu',
-    position: { x: -0.6, y: 0, z: 0 },
+    position: { x: 0, y: 1.0, z: -0.5 },
     verses: ['v1.14', 'v1.15', 'v1.21-22', 'v1.25'],
     conch: 'Pāñcajanya',
     visualType: 'avatar',
@@ -93,12 +93,12 @@ export const characters = [
   },
   {
     id: 'arjuna',
-    sprite: 'assets/arjuna_warrior_1773505742743.png',
+    sprite: 'assets/arjuna_voxel_sprite_transparent.png',
     name: 'Arjuna',
     nameDevanagari: 'अर्जुन',
     side: 'center',
     role: 'Pāṇḍava Prince / Protagonist',
-    position: { x: 0.6, y: 0, z: 0 },
+    position: { x: 0, y: 1.0, z: 0.7 },
     verses: ['v1.14', 'v1.15', 'v1.20', 'v1.21-22', 'v1.26-27', 'v1.28-30', 'v1.47'],
     conch: 'Devadatta',
     visualType: 'warrior',
@@ -110,7 +110,7 @@ export const characters = [
   // ─── KAURAVA SIDE ─────────────────────────────────────────────────────────
   {
     id: 'bhisma',
-    sprite: 'assets/bhisma_commander_1773505762319.png',
+    sprite: 'assets/bhisma_voxel_sprite_transparent.png',
     name: 'Bhīṣma',
     nameDevanagari: 'भीष्म',
     side: 'kaurava',
@@ -126,7 +126,7 @@ export const characters = [
   },
   {
     id: 'drona',
-    sprite: 'assets/drona_teacher_1773505796631.png',
+    sprite: 'assets/drona_voxel_sprite_transparent.png',
     name: 'Droṇa',
     nameDevanagari: 'द्रोण',
     side: 'kaurava',
@@ -141,7 +141,7 @@ export const characters = [
   },
   {
     id: 'duryodhana',
-    sprite: 'assets/duryodhana_prince_1773505775189.png',
+    sprite: 'assets/duryodhana_voxel_sprite_transparent.png',
     name: 'Duryodhana',
     nameDevanagari: 'दुर्योधन',
     side: 'kaurava',
@@ -156,6 +156,7 @@ export const characters = [
   },
   {
     id: 'karna',
+    sprite: 'assets/karna_voxel_sprite_transparent.png',
     name: 'Karṇa',
     nameDevanagari: 'कर्ण',
     side: 'kaurava',
@@ -170,6 +171,7 @@ export const characters = [
   },
   {
     id: 'kripa',
+    sprite: 'assets/kripa_voxel_sprite_transparent.png',
     name: 'Kṛpa',
     nameDevanagari: 'कृप',
     side: 'kaurava',
@@ -184,6 +186,7 @@ export const characters = [
   },
   {
     id: 'ashvatthama',
+    sprite: 'assets/ashvatthama_voxel_sprite_transparent.png',
     name: 'Aśvatthāmā',
     nameDevanagari: 'अश्वत्थामा',
     side: 'kaurava',
@@ -198,6 +201,7 @@ export const characters = [
   },
   {
     id: 'vikarna',
+    sprite: 'assets/vikarna_voxel_sprite_transparent.png',
     name: 'Vikarṇa',
     nameDevanagari: 'विकर्ण',
     side: 'kaurava',
@@ -212,6 +216,7 @@ export const characters = [
   },
   {
     id: 'bhurishravas',
+    sprite: 'assets/bhurishravas_voxel_sprite_transparent.png',
     name: 'Bhūriśravas',
     nameDevanagari: 'भूरिश्रवस्',
     side: 'kaurava',
@@ -228,6 +233,7 @@ export const characters = [
   // ─── PĀṆḌAVA SIDE ─────────────────────────────────────────────────────────
   {
     id: 'dhrishtadyumna',
+    sprite: 'assets/dhrishtadyumna_voxel_sprite_transparent.png',
     name: 'Dhṛṣṭadyumna',
     nameDevanagari: 'धृष्टद्युम्न',
     side: 'pandava',
@@ -242,7 +248,7 @@ export const characters = [
   },
   {
     id: 'bhima',
-    sprite: 'assets/bhima_warrior_1773505811935.png',
+    sprite: 'assets/bhima_voxel_sprite_transparent.png',
     name: 'Bhīma',
     nameDevanagari: 'भीम',
     side: 'pandava',
@@ -257,6 +263,7 @@ export const characters = [
   },
   {
     id: 'yudhishthira',
+    sprite: 'assets/yudhisthira_voxel_sprite_transparent.png',
     name: 'Yudhiṣṭhira',
     nameDevanagari: 'युधिष्ठिर',
     side: 'pandava',
@@ -271,6 +278,7 @@ export const characters = [
   },
   {
     id: 'nakula',
+    sprite: 'assets/nakula_voxel_sprite_transparent.png',
     name: 'Nakula',
     nameDevanagari: 'नकुल',
     side: 'pandava',
@@ -285,6 +293,7 @@ export const characters = [
   },
   {
     id: 'sahadeva',
+    sprite: 'assets/sahadeva_voxel_sprite_transparent.png',
     name: 'Sahadeva',
     nameDevanagari: 'सहदेव',
     side: 'pandava',
@@ -299,6 +308,7 @@ export const characters = [
   },
   {
     id: 'drupada',
+    sprite: 'assets/drupada_voxel_sprite_transparent.png',
     name: 'Drupada',
     nameDevanagari: 'द्रुपद',
     side: 'pandava',
@@ -327,6 +337,7 @@ export const characters = [
   },
   {
     id: 'satyaki',
+    sprite: 'assets/satyaki_voxel_sprite_transparent.png',
     name: 'Sātyaki',
     nameDevanagari: 'सात्यकि',
     side: 'pandava',
@@ -341,6 +352,7 @@ export const characters = [
   },
   {
     id: 'abhimanyu',
+    sprite: 'assets/abhimanyu_voxel_sprite_transparent.png',
     name: 'Abhimanyu',
     nameDevanagari: 'अभिमन्यु',
     side: 'pandava',

@@ -9,7 +9,7 @@ function Wheel({ position }) {
     <group position={position}>
       {/* Rim */}
       <mesh>
-        <torusGeometry args={[0.8, 0.08, 8, 24]} />
+        <boxGeometry args={[1.0, 1.0, 0.15]} />
         <meshStandardMaterial color="#8b5a00" roughness={0.7} metalness={0.2} />
       </mesh>
       {/* Hub */}
@@ -18,15 +18,15 @@ function Wheel({ position }) {
         <meshStandardMaterial color="#c8a84b" metalness={0.8} roughness={0.3} />
       </mesh>
       {/* Spokes */}
-      {Array.from({ length: spokes }).map((_, i) => {
-        const angle = (i / spokes) * Math.PI * 2
+      {Array.from({ length: 4 }).map((_, i) => {
+        const angle = (i / 4) * Math.PI * 2
         return (
           <mesh
             key={i}
-            position={[Math.cos(angle) * 0.4, Math.sin(angle) * 0.4, 0]}
+            position={[Math.cos(angle) * 0.25, Math.sin(angle) * 0.25, 0]}
             rotation={[0, 0, angle]}
           >
-            <cylinderGeometry args={[0.03, 0.03, 0.8, 6]} />
+            <boxGeometry args={[0.06, 0.5, 0.08]} />
             <meshStandardMaterial color="#6b3a00" roughness={0.8} />
           </mesh>
         )
@@ -35,47 +35,144 @@ function Wheel({ position }) {
   )
 }
 
-// Stylized horse
-function Horse({ position, rotation = [0, 0, 0] }) {
+// Detailed Voxel Horse representing one of the five senses
+// Senses: 'sight', 'hearing', 'smell', 'taste', 'touch'
+function Horse({ position, rotation = [0, 0, 0], sense = 'sight' }) {
+  const SENSE_COLORS = {
+    sight: '#4488ff',   // Bright blue for vision
+    hearing: '#ff44aa', // Pink/Magenta for sound
+    smell: '#44ff88',   // Green for fragrance
+    taste: '#ff8844',   // Orange for flavor
+    touch: '#aa44ff',   // Purple for sensation
+  }
+  
+  const accentColor = SENSE_COLORS[sense]
+
   return (
     <group position={position} rotation={rotation}>
-      {/* Body */}
+      {/* ── Main Body (Voxel Blocks) ── */}
       <mesh position={[0, 0.7, 0]}>
-        <boxGeometry args={[0.5, 0.5, 1.2]} />
+        <boxGeometry args={[0.55, 0.55, 1.2]} />
+        <meshStandardMaterial color="#ffffff" roughness={0.8} />
+      </mesh>
+      {/* Body Shade Detailing */}
+      <mesh position={[0, 0.42, 0]}>
+        <boxGeometry args={[0.56, 0.1, 1.0]} />
         <meshStandardMaterial color="#f0f0f0" roughness={0.8} />
       </mesh>
-      {/* Neck */}
-      <mesh position={[0, 1.1, 0.45]} rotation={[0.4, 0, 0]}>
-        <cylinderGeometry args={[0.18, 0.22, 0.6, 8]} />
-        <meshStandardMaterial color="#f0f0f0" roughness={0.8} />
-      </mesh>
-      {/* Head */}
-      <mesh position={[0, 1.45, 0.7]}>
-        <boxGeometry args={[0.22, 0.28, 0.45]} />
-        <meshStandardMaterial color="#f0f0f0" roughness={0.8} />
-      </mesh>
-      {/* Legs */}
-      {[[-0.15, -0.6], [0.15, -0.6], [-0.15, 0.4], [0.15, 0.4]].map(([x, z], i) => (
-        <mesh key={i} position={[x, 0.2, z]}>
-          <cylinderGeometry args={[0.07, 0.06, 0.8, 6]} />
-          <meshStandardMaterial color="#e8e8e8" roughness={0.8} />
+
+      {/* ── Neck (Layered cubes) ── */}
+      <group position={[0, 1.05, 0.45]} rotation={[0.4, 0, 0]}>
+        <mesh position={[0, -0.1, 0]}>
+          <boxGeometry args={[0.3, 0.4, 0.3]} />
+          <meshStandardMaterial color="#ffffff" />
         </mesh>
+        <mesh position={[0, 0.2, 0]}>
+          <boxGeometry args={[0.25, 0.3, 0.25]} />
+          <meshStandardMaterial color="#ffffff" />
+        </mesh>
+      </group>
+
+      {/* ── Head ── */}
+      <group position={[0, 1.45, 0.7]}>
+        {/* Skull */}
+        <mesh>
+          <boxGeometry args={[0.3, 0.4, 0.5]} />
+          <meshStandardMaterial color="#ffffff" />
+        </mesh>
+        {/* Muzzle */}
+        <mesh position={[0, -0.1, 0.3]}>
+          <boxGeometry args={[0.22, 0.2, 0.2]} />
+          <meshStandardMaterial color="#e8e8e8" />
+        </mesh>
+        
+        {/* ── Sensory Highlights ── */}
+        {/* Sight (Eyes) */}
+        <mesh position={[0.16, 0.1, 0.15]}>
+          <boxGeometry args={[0.05, 0.05, 0.05]} />
+          <meshStandardMaterial color={sense === 'sight' ? accentColor : '#222'} emissive={sense === 'sight' ? accentColor : '#000'} emissiveIntensity={1} />
+        </mesh>
+        <mesh position={[-0.16, 0.1, 0.15]}>
+          <boxGeometry args={[0.05, 0.05, 0.05]} />
+          <meshStandardMaterial color={sense === 'sight' ? accentColor : '#222'} emissive={sense === 'sight' ? accentColor : '#000'} emissiveIntensity={1} />
+        </mesh>
+
+        {/* Hearing (Ears - slightly larger/colored if hearing sense) */}
+        {[-1, 1].map(side => (
+          <mesh key={side} position={[side * 0.12, 0.25, -0.1]}>
+            <boxGeometry args={[0.06, 0.15, 0.06]} />
+            <meshStandardMaterial color={sense === 'hearing' ? accentColor : '#ffffff'} />
+          </mesh>
+        ))}
+
+        {/* Smell (Nose highlight) */}
+        {sense === 'smell' && (
+          <mesh position={[0, -0.1, 0.4]}>
+            <boxGeometry args={[0.1, 0.05, 0.02]} />
+            <meshStandardMaterial color={accentColor} emissive={accentColor} />
+          </mesh>
+        )}
+
+        {/* Taste (Bit/Mouth highlight) */}
+        {sense === 'taste' && (
+          <mesh position={[0, -0.18, 0.3]}>
+            <boxGeometry args={[0.25, 0.05, 0.05]} />
+            <meshStandardMaterial color={accentColor} />
+          </mesh>
+        )}
+      </group>
+
+      {/* ── Legs (Blocks) ── */}
+      {[[-0.18, -0.5], [0.18, -0.5], [-0.18, 0.4], [0.18, 0.4]].map(([x, z], i) => (
+        <group key={i} position={[x, 0.3, z]}>
+          <mesh>
+            <boxGeometry args={[0.12, 0.6, 0.12]} />
+            <meshStandardMaterial color="#ffffff" />
+          </mesh>
+          {/* Hoof */}
+          <mesh position={[0, -0.3, 0]}>
+            <boxGeometry args={[0.14, 0.1, 0.14]} />
+            <meshStandardMaterial color="#666666" />
+          </mesh>
+        </group>
       ))}
-      {/* Mane */}
-      <mesh position={[0, 1.3, 0.5]} rotation={[0.3, 0, 0]}>
-        <boxGeometry args={[0.08, 0.4, 0.1]} />
-        <meshStandardMaterial color="#d4d4d4" roughness={1} />
-      </mesh>
-      {/* Tail */}
-      <mesh position={[0, 0.8, -0.65]} rotation={[-0.5, 0, 0]}>
-        <cylinderGeometry args={[0.04, 0.02, 0.5, 6]} />
-        <meshStandardMaterial color="#d4d4d4" roughness={1} />
-      </mesh>
-      {/* Gold harness accent */}
-      <mesh position={[0, 0.75, 0]}>
-        <torusGeometry args={[0.28, 0.02, 6, 12]} />
-        <meshStandardMaterial color="#c8a84b" metalness={0.9} roughness={0.2} />
-      </mesh>
+
+      {/* ── Mane (Stacked Voxel cubes) ── */}
+      <group position={[0, 1.3, 0.42]}>
+        {[0, -0.15, -0.3, -0.45].map((z, i) => (
+          <mesh key={i} position={[0, -i * 0.1, z]}>
+            <boxGeometry args={[0.12, 0.3, 0.15]} />
+            <meshStandardMaterial color="#d4d4d4" />
+          </mesh>
+        ))}
+      </group>
+
+      {/* ── Tail (Voxel chain) ── */}
+      <group position={[0, 0.85, -0.6]} rotation={[-0.4, 0, 0]}>
+        <mesh position={[0, -0.1, -0.1]}>
+          <boxGeometry args={[0.1, 0.1, 0.3]} />
+          <meshStandardMaterial color="#d4d4d4" />
+        </mesh>
+        <mesh position={[0, -0.25, -0.2]}>
+          <boxGeometry args={[0.08, 0.25, 0.1]} />
+          <meshStandardMaterial color="#d4d4d4" />
+        </mesh>
+      </group>
+
+      {/* ── Harness (Golden voxel band) ── */}
+      <group position={[0, 0.75, 0.1]}>
+        <mesh>
+          <boxGeometry args={[0.6, 0.6, 0.1]} />
+          <meshStandardMaterial color="#c8a84b" metalness={0.8} />
+        </mesh>
+        {/* Sense Symbol on the Harness side */}
+        {sense === 'touch' && (
+          <mesh position={[0.31, 0, 0]}>
+            <boxGeometry args={[0.02, 0.2, 0.2]} />
+            <meshStandardMaterial color={accentColor} emissive={accentColor} />
+          </mesh>
+        )}
+      </group>
     </group>
   )
 }
@@ -126,100 +223,7 @@ function HanumanBanner() {
   )
 }
 
-// Kṛṣṇa figure — charioteer position
-function KrishnaFigure() {
-  return (
-    <group position={[-0.5, 0, 0.6]}>
-      {/* Legs */}
-      <mesh position={[0, 0.5, 0]}>
-        <cylinderGeometry args={[0.18, 0.22, 1.0, 8]} />
-        <meshStandardMaterial color="#1a3a5c" roughness={0.8} />
-      </mesh>
-      {/* Body */}
-      <mesh position={[0, 1.25, 0]}>
-        <cylinderGeometry args={[0.22, 0.24, 0.7, 8]} />
-        <meshStandardMaterial color="#2244aa" roughness={0.7} />
-      </mesh>
-      {/* Shoulders/arms holding reins */}
-      <mesh position={[0, 1.4, 0]} rotation={[0, 0, Math.PI / 2]}>
-        <cylinderGeometry args={[0.1, 0.1, 0.9, 8]} />
-        <meshStandardMaterial color="#2244aa" roughness={0.7} />
-      </mesh>
-      {/* Reins — left */}
-      <mesh position={[-0.55, 1.35, -0.3]} rotation={[0.5, 0.2, 0.1]}>
-        <cylinderGeometry args={[0.015, 0.015, 1.0, 4]} />
-        <meshStandardMaterial color="#8b5a00" roughness={0.9} />
-      </mesh>
-      {/* Reins — right */}
-      <mesh position={[0.55, 1.35, -0.3]} rotation={[0.5, -0.2, -0.1]}>
-        <cylinderGeometry args={[0.015, 0.015, 1.0, 4]} />
-        <meshStandardMaterial color="#8b5a00" roughness={0.9} />
-      </mesh>
-      {/* Head */}
-      <mesh position={[0, 1.75, 0]}>
-        <sphereGeometry args={[0.22, 12, 10]} />
-        <meshStandardMaterial color="#3d1a00" roughness={0.8} />
-      </mesh>
-      {/* Crown/peacock feather */}
-      <mesh position={[0, 2.1, 0]}>
-        <cylinderGeometry args={[0.18, 0.02, 0.45, 8]} />
-        <meshStandardMaterial color="#c8a84b" metalness={0.8} roughness={0.3} />
-      </mesh>
-      {/* Divine glow */}
-      <pointLight position={[0, 1.5, 0]} intensity={0.8} color="#4488ff" distance={4} />
-    </group>
-  )
-}
-
-// Arjuna figure — warrior position
-function ArjunaFigure() {
-  return (
-    <group position={[0.5, 0, -0.1]}>
-      {/* Legs */}
-      <mesh position={[0, 0.5, 0]}>
-        <cylinderGeometry args={[0.18, 0.22, 1.0, 8]} />
-        <meshStandardMaterial color="#8b6914" roughness={0.8} />
-      </mesh>
-      {/* Body */}
-      <mesh position={[0, 1.25, 0]}>
-        <cylinderGeometry args={[0.22, 0.24, 0.7, 8]} />
-        <meshStandardMaterial color="#c8a84b" roughness={0.6} metalness={0.3} />
-      </mesh>
-      {/* Bow — Gāṇḍīva */}
-      <group position={[0.45, 1.2, 0]} rotation={[0, 0, 0.3]}>
-        <mesh>
-          <torusGeometry args={[0.55, 0.025, 6, 20, Math.PI * 1.5]} />
-          <meshStandardMaterial color="#c8a84b" metalness={0.7} roughness={0.3} />
-        </mesh>
-        {/* Bowstring */}
-        <mesh position={[0, 0.3, 0]} rotation={[0, 0, Math.PI / 4]}>
-          <cylinderGeometry args={[0.008, 0.008, 1.05, 4]} />
-          <meshStandardMaterial color="#f0f0f0" roughness={0.5} />
-        </mesh>
-      </group>
-      {/* Arm holding bow */}
-      <mesh position={[0.3, 1.35, 0]} rotation={[0, 0, -0.6]}>
-        <cylinderGeometry args={[0.09, 0.09, 0.6, 8]} />
-        <meshStandardMaterial color="#c8a84b" roughness={0.6} metalness={0.3} />
-      </mesh>
-      {/* Head */}
-      <mesh position={[0, 1.75, 0]}>
-        <sphereGeometry args={[0.22, 12, 10]} />
-        <meshStandardMaterial color="#3d1a00" roughness={0.8} />
-      </mesh>
-      {/* Diadem (kirīṭin) */}
-      <mesh position={[0, 2.0, 0]}>
-        <cylinderGeometry args={[0.20, 0.22, 0.25, 10]} />
-        <meshStandardMaterial color="#c8a84b" metalness={0.9} roughness={0.2} />
-      </mesh>
-      {/* Point of diadem */}
-      <mesh position={[0, 2.2, 0]}>
-        <coneGeometry args={[0.12, 0.3, 8]} />
-        <meshStandardMaterial color="#c8a84b" metalness={0.9} roughness={0.2} />
-      </mesh>
-    </group>
-  )
-}
+// Hardcoded figures removed in favor of registry sprites
 
 export default function Chariot({ onClick, onPointerOver, onPointerOut }) {
   const glowRef = useRef()
@@ -268,34 +272,29 @@ export default function Chariot({ onClick, onPointerOver, onPointerOut }) {
       </mesh>
 
       {/* Axle */}
-      <mesh position={[0, 0.7, -0.6]} rotation={[0, 0, Math.PI / 2]}>
-        <cylinderGeometry args={[0.08, 0.08, 2.6, 10]} />
-        <meshStandardMaterial color="#6b3a00" roughness={0.7} metalness={0.2} />
-      </mesh>
-
-      {/* Wheels */}
-      <Wheel position={[-1.25, 0.7, -0.6]} />
-      <Wheel position={[1.25, 0.7, -0.6]} />
+      <Wheel position={[-1.1, 0.5, 0]} />
+      <Wheel position={[1.1, 0.5, 0]} />
 
       {/* Yoke bar connecting to horses */}
-      <mesh position={[0, 0.85, 2.0]} rotation={[Math.PI / 2, 0, 0]}>
-        <cylinderGeometry args={[0.05, 0.05, 3.5, 8]} />
+      <mesh position={[0, 0.85, -2.0]} rotation={[Math.PI / 2, 0, 0]}>
+        <boxGeometry args={[0.1, 3.5, 0.1]} />
         <meshStandardMaterial color="#6b3a00" roughness={0.7} />
       </mesh>
 
-      {/* Five white horses in V formation */}
-      <Horse position={[0, 0, 4.2]} rotation={[0, Math.PI, 0]} />
-      <Horse position={[-0.9, 0, 3.9]} rotation={[0, Math.PI + 0.15, 0]} />
-      <Horse position={[0.9, 0, 3.9]} rotation={[0, Math.PI - 0.15, 0]} />
-      <Horse position={[-1.7, 0, 3.5]} rotation={[0, Math.PI + 0.28, 0]} />
-      <Horse position={[1.7, 0, 3.5]} rotation={[0, Math.PI - 0.28, 0]} />
+      {/* Five white horses in V formation - each representing a sense */}
+      <Horse position={[0, 0, -4.2]} rotation={[0, Math.PI, 0]} sense="sight" />
+      <Horse position={[-0.9, 0, -3.9]} rotation={[0, Math.PI + 0.15, 0]} sense="hearing" />
+      <Horse position={[0.9, 0, -3.9]} rotation={[0, Math.PI - 0.15, 0]} sense="smell" />
+      <Horse position={[-1.7, 0, -3.5]} rotation={[0, Math.PI + 0.28, 0]} sense="taste" />
+      <Horse position={[1.7, 0, -3.5]} rotation={[0, Math.PI - 0.28, 0]} sense="touch" />
 
-      {/* Hanumān banner */}
-      <HanumanBanner />
+      {/* Hanumān banner — moved to the very back */}
+      <group position={[0, 0, 1.25]}>
+        <HanumanBanner />
+      </group>
 
       {/* Kṛṣṇa and Arjuna */}
-      <KrishnaFigure />
-      <ArjunaFigure />
+
     </group>
   )
 }

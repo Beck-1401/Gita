@@ -3,6 +3,7 @@ import KurukshetraScene from './scene/KurukshetraScene'
 import VersePanel from './components/VersePanel'
 import IntroOverlay from './components/IntroOverlay'
 import HUD from './components/HUD'
+import CharacterGallery from './components/CharacterGallery'
 
 export default function App() {
   const [entered, setEntered] = useState(false)
@@ -32,17 +33,37 @@ export default function App() {
       {/* HUD */}
       {entered && <HUD hasSelection={!!selectedCharacter} />}
 
-      {/* Verse panel — slides in from right */}
+      {/* ── UI Panels ── */}
+      
+      {/* 1. Left Gallery — slides in from left */}
+      <div
+        style={{
+          position: 'fixed',
+          left: 0,
+          top: 0,
+          height: '100%',
+          width: '30%',
+          maxWidth: '400px',
+          transform: selectedCharacter ? 'translateX(0)' : 'translateX(-100%)',
+          transition: 'transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)',
+          zIndex: 50,
+          pointerEvents: selectedCharacter ? 'auto' : 'none',
+        }}
+      >
+        <CharacterGallery character={selectedCharacter} />
+      </div>
+
+      {/* 2. Right Info Panel — slides in from right */}
       <div
         style={{
           position: 'fixed',
           right: 0,
           top: 0,
           height: '100%',
-          width: '100%',
+          width: '30%',
           maxWidth: '440px',
           transform: selectedCharacter ? 'translateX(0)' : 'translateX(100%)',
-          transition: 'transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
+          transition: 'transform 0.45s cubic-bezier(0.4, 0, 0.2, 1)',
           zIndex: 50,
           pointerEvents: selectedCharacter ? 'auto' : 'none',
         }}

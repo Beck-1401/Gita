@@ -1,12 +1,15 @@
+
 import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Preload } from '@react-three/drei'
+import { Preload } from '@react-three/drei'
 import Environment from './Environment'
 import Chariot from './Chariot'
 import WarriorFigure from './WarriorFigure'
 import ArmyMass from './ArmyMass'
 import WarElephant from './elements/WarElephant'
 import { characters } from '../data/characters'
+import CameraController from './CameraController'
+import PalaceScene from './PalaceScene'
 
 // Chariot "character" for click handling
 const CHARIOT_CHARACTER = {
@@ -58,17 +61,10 @@ export default function KurukshetraScene({ selectedCharacter, onSelect }) {
           />
         ))}
 
-        <OrbitControls
-          target={[0, 1.5, 0]}
-          minDistance={5}
-          maxDistance={80}
-          maxPolarAngle={Math.PI / 2.1}
-          minPolarAngle={0.1}
-          enableDamping
-          dampingFactor={0.06}
-          autoRotate={!selectedCharacter}
-          autoRotateSpeed={0.4}
-        />
+        {/* ── Hastināpura Palace Scene ── */}
+        <PalaceScene position={[60, 0.1, 80]} />
+
+        <CameraController selectedCharacter={selectedCharacter} />
 
         <Preload all />
       </Suspense>
