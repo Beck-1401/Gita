@@ -36,54 +36,55 @@ const SIDE_PALETTES = {
 export default function GenericWarrior({ character }) {
   const palette = SIDE_PALETTES[character.side] || SIDE_PALETTES.center
   const totalH = character.height || 2.2
-  const vt = character.visualType || 'warrior'
-  const s = vt === 'commander' ? 1.1 : vt === 'king' ? 1.05 : 1.0
+  const s = character.visualType === 'commander' ? 1.2 : 1.0
 
-  // Face expression based on side
-  const expression = character.side === 'kaurava' ? 'stern' : 'neutral'
-
-  // Crown type mapping
-  const crownType = vt === 'commander' ? 'commander'
-    : vt === 'king' ? 'king'
-    : vt === 'prince' ? 'prince'
-    : 'warrior'
-
-  // Weapon — commanders and warriors get a sword, kings get nothing visible
-  const showSword = vt === 'warrior' || vt === 'prince'
-  const rightPose = showSword ? 'holding_weapon' : 'at_side'
-
+  // ── Voxel "Ghost" Fallback ──
+  // While we wait for sprites, we show a block-based figure
   return (
-    <BaseFigure
-      bodyScale={s}
-      totalHeight={totalH}
-      skinColor={palette.skin}
-      armorColor={palette.armor}
-      dhotiColor={palette.dhoti}
-      rightArmPose={rightPose}
-      rightArmArmorColor={palette.armor}
-      leftArmPose={character.conch ? 'holding_weapon' : 'at_side'}
-      leftArmArmorColor={palette.armor}
-      faceOptions={{
-        skinColor: palette.skin,
-        age: vt === 'commander' ? 'middle' : 'young',
-        expression,
-        eyeSize: 'normal',
-      }}
-      headgear={<Crown type={crownType} color={palette.crown} scale={s} />}
-      weapon={
-        showSword ? (
-          <group position={[0.4 * s, totalH * 0.35, 0.05]} rotation={[0.2, 0, 0.3]}>
-            <Sword scale={s * 0.8} />
-          </group>
-        ) : null
-      }
-      accessory={
-        character.conch ? (
-          <group position={[-0.4 * s, totalH * 0.32, 0]}>
-            <Conch scale={s} />
-          </group>
-        ) : null
-      }
-    />
+    <group scale={s}>
+      {/* Head */}
+      <mesh position={[0, totalH * 0.75, 0]}>
+        <boxGeometry args={[0.4, 0.4, 0.4]} />
+        <meshStandardMaterial 
+          color={palette.skin} 
+          transparent 
+          opacity={0.8} 
+        />
+      </mesh>
+      
+      {/* Body */}
+      <mesh position={[0, totalH * 0.45, 0]}>
+        <boxGeometry args={[0.5, 0.6, 0.3]} />
+        <meshStandardMaterial 
+          color={palette.armor} 
+          transparent 
+          opacity={0.7} 
+        />
+      </mesh>
+
+      {/* Dhoti / Base */}
+      <mesh position={[0, totalH * 0.15, 0]}>
+        <boxGeometry args={[0.55, 0.35, 0.4]} />
+        <meshStandardMaterial 
+          color={palette.dhoti} 
+          transparent 
+          opacity={0.6} 
+        />
+      </mesh>
+
+      {/* Arm placeholders */}
+      {[-1, 1].map(side => (
+        <mesh key={side} position={[side * 0.35, totalH * 0.45, 0]}>
+          <boxGeometry args={[0.15, 0.5, 0.15]} />
+          <meshStandardMaterial color={palette.skin} transparent opacity={0.6} />
+        </mesh>
+      ))}
+
+      {/* Decorative Crown Block */}
+      <mesh position={[0, totalH * 0.95, 0]}>
+        <boxGeometry args={[0.3, 0.15, 0.3]} />
+        <meshStandardMaterial color={palette.crown} />
+      </mesh>
+    </group>
   )
 }

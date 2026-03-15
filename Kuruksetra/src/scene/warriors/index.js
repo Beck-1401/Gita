@@ -14,6 +14,7 @@ import BhimaFigure from './BhimaFigure'
 import YudhishthiraFigure from './YudhishthiraFigure'
 import KarnaFigure from './KarnaFigure'
 import DhrishtadyumnaFigure from './DhrishtadyumnaFigure'
+import Svana from './Svana'
 
 const WARRIOR_COMPONENTS = {
   krishna: KrishnaFigure,
@@ -25,6 +26,7 @@ const WARRIOR_COMPONENTS = {
   yudhishthira: YudhishthiraFigure,
   karna: KarnaFigure,
   dhrishtadyumna: DhrishtadyumnaFigure,
+  svana: Svana,
 }
 
 /**
