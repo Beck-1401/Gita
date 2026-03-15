@@ -5,7 +5,6 @@ import { Preload } from '@react-three/drei'
 import Environment from './Environment'
 import Chariot from './Chariot'
 import WarriorFigure from './WarriorFigure'
-import ArmyMass from './ArmyMass'
 import WarElephant from './elements/WarElephant'
 import { characters } from '../data/characters'
 import CameraController from './CameraController'
@@ -34,9 +33,7 @@ export default function KurukshetraScene({ selectedCharacter, onSelect }) {
       <Suspense fallback={null}>
         <Environment />
 
-        {/* Army masses — background soldiers */}
-        <ArmyMass side="kaurava" count={200} />
-        <ArmyMass side="pandava" count={200} />
+        {/* Army masses — (removed columns) */}
 
         {/* War elephants */}
         <WarElephant position={[-12, 0, -16]} rotation={[0, 0.3, 0]} scale={0.9} side="kaurava" />
